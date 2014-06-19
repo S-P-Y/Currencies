@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+{% load static %} 
+<html>
+<head>
+<script type="text/javascript">
+<!-- 
+function select_image(objId,theValue) { 
+
+
+    
+var imgs=["{% static "pic01.jpg" %}","{% static "pic02.jpg" %}","{% static "pic03.jpg" %}",
+"{% static "pic04.jpg" %}","{% static "pic05.jpg" %}","{% static "pic06.jpg" %}",
+"{% static "pic07.jpg" %}","{% static "pic08.jpg" %}","{% static "pic09.jpg" %}",
+"{% static "pic10.jpg" %}","{% static "pic11.jpg" %}","{% static "pic12.jpg" %}",
+"{% static "pic13.jpg" %}","{% static "pic14.jpg" %}","{% static "pic15.jpg" %}",
+"{% static "pic16.jpg" %}","{% static "pic17.jpg" %}",];
+     
+
+
+
+    var d=document;
+    theValue=imgs[theValue];
+    if (!theValue || !d.getElementById ) return;
+    var obj = d.getElementById(objId);
+    if (obj) obj.src=theValue;    
+}
+</script>
+</head>
+<body>
+
+
+<h1>Currencies</h1>
+
+
+<form name="form1" method="post" action="">
+  <select name="imgs" id="imgsid" onchange="select_image('theImg',this.selectedIndex)">
+
+
+{% for x in lists %}
+    <option value="{{ x }}">{{ x|safe }}</option>
+{% endfor %}
+
+
+  </select>
+  <img src="{% static "pic99.jpg" %}" alt="anAlt" name="theImg"  id="theImg">
+</form>
+ 
+
+
+
+
+
+
+
+</body> 
+
+</html>
